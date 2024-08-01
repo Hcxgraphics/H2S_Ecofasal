@@ -94,7 +94,14 @@ app.post("/profile",(req,res)=>{
 });
 
 
-app.listen(port,()=>{
-    console.log(`server is running at pory ${port}.`);
-});
+// app.listen(port,()=>{
+//     console.log(`server is running at pory ${port}.`);
+// });
 
+if (!process.env.VERCEL) {
+    app.listen(3000, () => {
+      console.log('Server started on http://localhost:3000');
+    });
+  }
+  
+  export default app;
