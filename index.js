@@ -1,4 +1,8 @@
 import express from 'express';
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 // import bodyParser from 'body-parser';
 // import ejs from 'ejs'; 
 
@@ -10,7 +14,7 @@ const port=3000;
 app.use(express.static("public"));
 
 app.get("/",(req,res)=>{
-    res.sendFile("C:/Users/harshada/OneDrive/Desktop/Agro/H2S_Ecofasal/index.html");
+    res.sendFile(__dirname+"/index.html");
 });
 
 // app.get("/",(req,res)=>{
