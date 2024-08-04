@@ -1,23 +1,24 @@
 const express = require("express");
 const app = express();
-// const cors = require("cors");
 const path = require("path");
 
-
-// // cors
-// app.use(cors())
+let email_id=null;
 
 app.use(express.static(path.join(__dirname, "./public", "../public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// setting up EJS
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./views", "../views"));
 
 // routes
 app.get("/", (req, res) => {
-  res.render("index", { title: "bhau Page" });
+  email_id=req.body.email_id;
+  res.render("mainPage", { 
+    sign:"#",
+    mainPg:true,
+    mail_id:email_id
+   });
 });
 
 const start = () => {
