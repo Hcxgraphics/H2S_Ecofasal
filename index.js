@@ -10,7 +10,7 @@ const port=3000;
 app.use(express.static("public"));
 
 app.get("/",(req,res)=>{
-    res.sendFile("index.html");
+    res.sendFile("C:/Users/harshada/OneDrive/Desktop/Agro/H2S_Ecofasal/index.html");
 });
 
 // app.get("/",(req,res)=>{
