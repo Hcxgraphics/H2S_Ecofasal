@@ -17,7 +17,7 @@ app.set("views", path.join(__dirname, "./views", "../views"));
 
 // routes
 app.get("/", (req, res) => {
-  res.render("index", { title: "Home Page" });
+  res.render("index", { title: "bhau Page" });
 });
 
 const start = () => {
