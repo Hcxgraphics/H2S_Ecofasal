@@ -10,10 +10,14 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
 app.get("/",(req,res)=>{
-    res.render("mainPage",{
-        sign:"#"
-    });
+    res.sendFile("index.html");
 });
+
+// app.get("/",(req,res)=>{
+//     res.render("mainPage",{
+//         sign:"#"
+//     });
+// });
 
 app.get("/news",(req,res)=>{
     res.render("news",{
