@@ -9,8 +9,7 @@
     }],
   "routes": [{
       "src": "/(.*)",
-      "dest": "/"
-    }],
+      "dest": "/"    }],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm install"

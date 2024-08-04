@@ -10,13 +10,13 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
 app.get("/",(req,res)=>{
-    res.render("mainPage.ejs",{
+    res.render("mainPage",{
         sign:"#"
     });
 });
 
 app.get("/news",(req,res)=>{
-    res.render("news.ejs",{
+    res.render("news",{
         sign:"/"
     });
 });
@@ -25,30 +25,30 @@ app.get("/about",(req,res)=>{
 });
 
 app.get("/signin",(req,res)=>{
-    res.render("Sign.ejs",{
+    res.render("Sign",{
         sign:"/"
     });
 });
 app.get("/login",(req,res)=>{
-    res.render("login.ejs",{
+    res.render("login",{
         sign:"/"
     });
 });
 app.get("/news/loans",(req,res)=>{
-    res.render("loan.ejs",{
+    res.render("loan",{
         sign:"/",
         loan:true
     });
 });
 
 app.get("/reels",(req,res)=>{
-    res.render("reels.ejs",{
+    res.render("reels",{
         sign:"/",
         bool:true
     });
 });
 app.get("/community",(req,res)=>{
-    res.render("community.ejs",{
+    res.render("community",{
         sign:"/",
         community:true
     });
@@ -70,7 +70,7 @@ app.use((req,res,next)=>{
 
 app.get("/cropAnalysis",(req,res)=>{
     console.log(count);
-    res.render("cropAnalysis.ejs",{
+    res.render("cropAnalysis",{
         counter:count,
         sign:"/"
     })
@@ -79,7 +79,7 @@ app.get("/cropAnalysis",(req,res)=>{
 app.post("/cropAnalysis/submit",(req,res)=>{
     console.log(req.body.crop);
     console.log(count);
-    res.render("cropAnalysis.ejs",{
+    res.render("cropAnalysis",{
         counter:count,
         Crop : req.body.crop,
         Stage :req.body.stage,
@@ -88,7 +88,7 @@ app.post("/cropAnalysis/submit",(req,res)=>{
 });
 app.post("/profile",(req,res)=>{
     console.log(req.body.fname);
-        res.render("profile.ejs",{
+        res.render("profile",{
         Fname : req.body.fname,
         Lname :req.body.lname,
         profile:true,
