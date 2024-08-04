@@ -24,7 +24,7 @@ app.set("views", path.join(__dirname, "./views", "../views"));
 app.get("/", (req, res) => res.send("Hello World!"));
 app.use("/api/v1", require("./routes/api"));
 
-const start = () => {
+const startServer = () => {
   try {
     const port = process.env.PORT || 5000;
     connectDB(process.env.MONGO_URI);
@@ -36,7 +36,7 @@ const start = () => {
   }
 };
 
-start();
+startServer();
 module.exports = app;
 
 
