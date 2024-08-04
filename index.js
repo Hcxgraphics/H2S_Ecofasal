@@ -1,25 +1,119 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 const path = require("path");
 
 let email_id=null;
+let login_bool=true;
 
 app.use(express.static(path.join(__dirname, "./public", "../public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended:true}));
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./views", "../views"));
 
-// routes
+
 app.get("/", (req, res) => {
   email_id=req.body.email_id;
   res.render("mainPage", { 
     sign:"#",
     mainPg:true,
-    mail_id:email_id
+    login:login_bool
    });
 });
+
+app.get("/news",(req,res)=>{
+  res.render("news.ejs",{
+      sign:"/",
+      login:login_bool
+  });
+});
+app.get("/about",(req,res)=>{
+  res.redirect("https://drive.google.com/file/d/1FrMmwzrQfPMjKV_qJvF3krE1M7d4m7w8/view?usp=drivesdk")
+});
+
+app.get("/signin",(req,res)=>{
+  res.render("Sign.ejs",{
+      sign:"/",
+      login:login_bool
+  });
+});
+app.get("/login",(req,res)=>{
+  res.render("login.ejs",{
+      sign:"/",
+      login:login_bool
+  });
+});
+app.get("/news/loans",(req,res)=>{
+  res.render("loan.ejs",{
+      sign:"/",
+      loan:true,
+      login:login_bool
+  });
+});
+
+app.get("/reels",(req,res)=>{
+  res.render("reels.ejs",{
+      sign:"/",
+      bool:true,
+      login:login_bool
+  });
+});
+
+app.get("/webinar",(req,res)=>{
+  res.render("webinar.ejs",{
+      sign:"/",
+      login:login_bool
+  });
+});
+
+let count=-1;
+
+app.use((req,res,next)=>{
+  console.log(req.method)
+ if(req.method=='POST'){
+   count=1;
+  }
+ if(req.method=='GET'){
+   count=2;
+  }
+ next(); 
+});
+
+app.get("/cropAnalysis",(req,res)=>{
+  console.log(count);
+  res.render("cropAnalysis.ejs",{
+      counter:count,
+      sign:"/",
+      login:login_bool
+  })
+});
+
+app.post("/cropAnalysis/submit",(req,res)=>{
+  console.log(req.body.crop);
+  console.log(count);
+  res.render("cropAnalysis.ejs",{
+      counter:count,
+      Crop : req.body.crop,
+      Stage :req.body.stage,
+      sign:"/",
+      login:login_bool
+  });
+});
+app.post("/profile",(req,res)=>{
+  console.log(req.body.fname);
+      res.render("profile.ejs",{
+      Fname : req.body.fname,
+      Lname :req.body.lname,
+      profile:true,
+      sign:"/",
+      login:login_bool
+  })   
+});
+
 
 const start = () => {
   try {

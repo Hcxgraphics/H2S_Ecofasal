@@ -3,13 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "type": "commonjs",
-  "builds": [{
+  "builds": [
+    {
       "src": "*.js",
       "use": "@vercel/node"
-    }],
-  "routes": [{
+    }
+  ],
+  "routes": [
+    {
       "src": "/(.*)",
-      "dest": "/"    }],
+      "dest": "/"
+    }
+  ],
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",

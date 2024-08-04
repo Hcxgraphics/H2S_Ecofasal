@@ -30,7 +30,10 @@
         <p class="crop-analysis-text">
           "Get insights based on recent weather conditions and soil type."
         </p>
-        <button class="find-out-btn">Find Out</button>
+        <form method="get" action="/cropAnalysis">
+            <button type="submit" class="find-out-btn">Find Out</button>
+      </form>
+        
       </div>
     </div>
     </section>
@@ -41,7 +44,9 @@
           <h2 class="reel-title2">Agro content</h2>
           <p class="reel-subtitle">Learn new techniques & TECHNOLOGIES</p>
           <!--<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0ibm9uZSIvPjxwYXRoIGZpbGw9IiM2NmQ4YjUiIGQ9Im0xNSAxMi4zM2wtNiA0LjMzVjh6Ii8+PC9zdmc+" alt="Play button" class="play-icon">-->
-          <input type="image" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0ibm9uZSIvPjxwYXRoIGZpbGw9IiM2NmQ4YjUiIGQ9Im0xNSAxMi4zM2wtNiA0LjMzVjh6Ii8+PC9zdmc+" alt="Submit" class="play-icon" >
+          <form method="get" action="/reels">
+            <button type="submit" style="border: none;background-color: transparent;"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0ibm9uZSIvPjxwYXRoIGZpbGw9IiM2NmQ4YjUiIGQ9Im0xNSAxMi4zM2wtNiA0LjMzVjh6Ii8+PC9zdmc+" alt="Submit" class="play-icon"></button>
+          </form>
         </div>
       <div class="reel-image-container">
           <img src="https://cdn3d.iconscout.com/3d/premium/thumb/drone-for-farm-monitoring-6790867-5600935.png?f=webp" alt="Drone for farm monitoring" class="drone-image">
@@ -63,13 +68,13 @@
       </div>
     </section>
     
-    <section class="optimize-section" id="community">
+    <section class="optimize-section" id="webinar">
       <div class="optimize-content">
         <h2 class="optimize-title">Connect with Experts:</h2>
         <h2 class="optimize-title2"> Learn & Share</h2>
         <p class="optimize-subtitle">webinars : tutorials</p>
        <!---<button class="resolve-btn">RESOLVE</button>-->
-        <form method="get" action="/crop_health">
+        <form method="get" action="/webinar">
           <input type="submit" class="resolve-btn" value="KNOW MORE">
         </form>
       </div>
