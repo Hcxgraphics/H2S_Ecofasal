@@ -5,7 +5,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const connectDB = require("./config/connection");
+// const connectDB = require("./config/connection");
 const path = require("path");
 require("dotenv").config();
 
@@ -27,7 +27,7 @@ app.use("/api/v1", require("./routes/api"));
 const startServer = () => {
   try {
     const port = process.env.PORT || 5000;
-    connectDB(process.env.MONGO_URI);
+    // connectDB(process.env.MONGO_URI);
     app.listen(port, () =>
       console.log(`Server is listening on port ${port}.........`)
     );
