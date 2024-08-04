@@ -1,8 +1,17 @@
 {
-  "name": "hack4change",
+  "name": "H2S_ECOFASAL",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
+  "version": 2,
+  "builds": [{
+      "src": "*.js",
+      "use": "@vercel/node"
+    }],
+  "routes": [{
+      "src": "/(.*)",
+      "dest": "/"
+    }],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm install"
@@ -17,3 +26,4 @@
     "express": "^4.19.2"
   }
 }
+ 
