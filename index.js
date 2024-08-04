@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const path = require("path");
-const sendmail=require(".controllers/sendMail");
+const sendmail=require("/controllers/sendMail");
 
 let email_id=null;
 let login_bool=true;
