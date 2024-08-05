@@ -22,7 +22,6 @@ const sendMail = async (req, res) => {
 
     console.log("Message sent: %s", info.messageId);
     res.json(info);
-    res.redirect("/");
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Error sending email" });
