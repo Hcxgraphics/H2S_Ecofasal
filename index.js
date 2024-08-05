@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const nodemailer = require('nodemailer');
 const path = require("path");
 const sendmail=require(".controllers/sendMail");
 
