@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const nodemailer = require('nodemailer');
 const path = require("path");
-// const sendmail=require("./controllers/sendMail");
+const sendmail=require("./controllers/sendMail");
 
 let email_id=null;
 let login_bool=true;
@@ -57,7 +57,7 @@ app.get("/news/loans",(req,res)=>{
   });
 });
 
-// app.post("/mail", sendmail);
+app.post("/mail", sendmail);
 
 app.get("/reels",(req,res)=>{
   res.render("reels.ejs",{
