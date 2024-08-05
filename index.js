@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const nodemailer = require('nodemailer');
 const path = require("path");
-const sendmail=require(".controllers/sendMail");
+// const sendmail=require(".controllers/sendMail");
 
 let email_id=null;
 let login_bool=true;
@@ -56,7 +56,35 @@ app.get("/news/loans",(req,res)=>{
       login:login_bool
   });
 });
+const sendMail = async (req, res) => {
+  try {
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false, // Use `true` for port 465, `false` for all other ports
+      auth: {
+        user: 'ecofasal1@gmail.com',
+        pass: 'panv vueg qpcx wuzc'
+    },
+    });
 
+    let info = await transporter.sendMail({
+      from: '"meoww team👻" <ecofasal1@gmail.com>', // sender address
+      to: `${req.body.email_id}`, // list of receivers
+      subject: "Hello check check✔", // Subject line
+      text: "Newspaper", // plain text body
+      html: "<b>Newspaper</b>", // html body
+    });
+
+    console.log("Message sent: %s", info.messageId);
+    res.json(info);
+    res.redirect("/");
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error sending email" });
+  }
+};
 app.post("/mail", sendmail);
 
 app.get("/reels",(req,res)=>{

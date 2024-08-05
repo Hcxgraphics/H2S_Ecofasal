@@ -16,8 +16,8 @@ const sendMail = async (req, res) => {
       from: '"meoww team👻" <ecofasal1@gmail.com>', // sender address
       to: `${req.body.email_id}`, // list of receivers
       subject: "Hello check check✔", // Subject line
-      text: "Hello check check meow speaking", // plain text body
-      html: "<b>HHello check check meow speaking</b>", // html body
+      text: "Newspaper", // plain text body
+      html: "<b>Newspaper</b>", // html body
     });
 
     console.log("Message sent: %s", info.messageId);
