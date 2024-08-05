@@ -7,8 +7,6 @@
         "use": "@vercel/node"
       }
     ],
-    "files": [
-    "controllers/"],
 
     "routes": [
       {
