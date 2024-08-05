@@ -8,7 +8,7 @@ const sendMail = async (req, res) => {
       secure: false, // Use `true` for port 465, `false` for all other ports
       auth: {
         user: 'ecofasal1@gmail.com',
-        pass: 'panv vueg qpcx wuzc'
+        pass: 'due to security rerason password is removed from here'
     },
     });
 
